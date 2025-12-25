@@ -57,7 +57,7 @@ const Footer = () => {
                         <div className="relative flex items-center justify-center w-full h-full gap-12">
                             <button
                                 className="text-white font-semibold group-hover:text-red-100 transition-all duration-700 ease-out transform group-hover:-translate-x-6"
-                                onClick={() => window.open('https://github.com/samakshgolechha')}
+                                onClick={() => window.open('https://github.com/samakshgolechha', '_blank')}
                             >
                                 Samaksh Golechha
                             </button>
@@ -71,7 +71,7 @@ const Footer = () => {
                         <div className="relative flex items-center justify-center w-full h-full gap-12">
                             <button
                                 className="text-white font-semibold group-hover:text-red-100 transition-all duration-700 ease-out transform group-hover:-translate-x-4"
-                                onClick={() => window.open('https://github.com/antriksha3')}
+                                onClick={() => window.open('https://github.com/antriksha3', '_blank')}
                             >
                                 Antriksha Sharma
                             </button>
@@ -85,7 +85,7 @@ const Footer = () => {
                         <div className="relative flex items-center justify-center w-full h-full gap-12">
                             <button
                                 className="text-white font-semibold group-hover:text-red-100 transition-all duration-700 ease-out transform group-hover:-translate-x-4"
-                                onClick={() => window.open('https://github.com/trivedi-utkarsh')}
+                                onClick={() => window.open('https://github.com/trivedi-utkarsh', '_blank')}
                             >
                                 Utkarsh Trivedi
                             </button>
