@@ -3,6 +3,6 @@ Flask-CORS
 gunicorn
 pandas
 numpy
-sckit-learn
+scikit-learn
 pickle-mixin
 requests
