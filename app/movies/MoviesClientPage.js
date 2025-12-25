@@ -8,11 +8,10 @@ import MovieCardLoading from "@/components/MovieCardSkeleton";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/Footer";
 
-export default function MoviesPage() {
-  const searchParams = useSearchParams();
-  const query = searchParams.get("query");
-  const movie_id = searchParams.get("id");
-  const inputRecommend = searchParams.get("recommend");
+export default function MoviesPage({ searchParams }) {
+  const query = searchParams?.query || null;
+  const movie_id = searchParams?.id || null;
+  const inputRecommend = searchParams?.recommend || null;
 
   const [movieData, setMovieData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -29,19 +28,14 @@ export default function MoviesPage() {
   const modalContentRef = useRef(null);
   const router = useRouter();
 
-  useEffect(() => {
-    if (query) {
-      console.log("Searching for:", query);
-      fetchMovies(query);
-    } else if (movie_id) {
-      console.log("Fetching movie by ID:", movie_id);
-      fetchMovieById(movie_id);
-    } else if (inputRecommend) {
-      console.log("Fetching recommendations for:", inputRecommend);
-      getRecommendations(inputRecommend);
-      fetchMovies(inputRecommend);
-    }
-  }, []);
+ useEffect(() => {
+  if (query) fetchMovies(query);
+  else if (movie_id) fetchMovieById(movie_id);
+  else if (inputRecommend) {
+    getRecommendations(inputRecommend);
+    fetchMovies(inputRecommend);
+  }
+}, [query, movie_id, inputRecommend]);
 
   // Handle click outside modal to close it
   useEffect(() => {
