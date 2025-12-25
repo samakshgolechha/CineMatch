@@ -1,10 +1,10 @@
-import { Suspense } from "react";
-import MoviesClientPage from "./MoviesClientPage";
+import { Suspense } from 'react';
+import MoviesClientPage from './MoviesClientPage';
 
-export default function MoviesPage() {
+export default function Page({ searchParams }) {
   return (
-    <Suspense fallback={<div className="text-white p-10">Loading movies...</div>}>
-      <MoviesClientPage />
+    <Suspense fallback={<div className="text-white">Loading...</div>}>
+      <MoviesClientPage searchParams={searchParams} />
     </Suspense>
   );
 }
